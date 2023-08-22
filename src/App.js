@@ -1,11 +1,12 @@
 // hooks
 import { useState } from 'react';
+import { Routes } from 'react-router-dom'
 // pages
 import AuthPage from './pages/auth/AuthPage';
+import NewOrderPage from './pages/new-order/NewOrderPage';
 // components
 // css
 import './App.css';
-import NewOrderPage from './pages/new-order/NewOrderPage';
 
 function App() {
 
