@@ -1,18 +1,25 @@
 // hooks
 import { useState } from 'react';
 // pages
+import AuthPage from './pages/auth/AuthPage';
 // components
 // css
 import './App.css';
+import NewOrderPage from './pages/new-order/NewOrderPage';
 
 function App() {
 
   const [ user, setUser ] = useState( null ) // array destructuring
 
   return (
-    <div className="App">
+    <main className="App">
       <h1>APP</h1>
-    </div>
+      { user ?
+        <NewOrderPage />
+        :
+        <AuthPage />
+      }
+    </main>
   );
 }
 
