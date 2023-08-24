@@ -24,7 +24,7 @@ export default class SignUpForm extends Component {
     // in summary, in class components, use arrow functions for automatic binding
     
     handleChange = ( evt ) => {
-        // setState funciton inheritied form component - sola flames thanks
+        // setState function inherited from component - sola flames thanks
         this.setState({
             [evt.target.name] : evt.target.value,
             // dynamic way of updating our state depending on the event object that we're currently on
