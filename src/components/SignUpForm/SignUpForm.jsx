@@ -19,14 +19,14 @@ export default class SignUpForm extends Component {
     //     // thank you es6 for giving us let/const/arrowfunctions
     // }
 
-    // in summary, in class components use arrow funcitons for automatic binding
+    // in summary, in class components, use arrow functions for automatic binding
     
     render(){
         // need render method in class components
         const disable = this.state.password !== this.state.confirm;
             // for disable attribute on sign up button
 
-        // in class components there is popular memory leakage error... this can cause when variables are outside of render..
+        // in class components there is popular memory leakage error... this can be caused when variables are outside of render..
 
         // keep variables inside render for encapsulation purposes
         return (
