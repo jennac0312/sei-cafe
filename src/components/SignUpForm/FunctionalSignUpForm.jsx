@@ -4,11 +4,11 @@ const FunctionalSignUpForm = () => {
 
     const [ state, setState ] = useState({})
 
-    let disable
+    // let disable
 
-    useEffect(() => {
-        disable = state.password !== state.confirm;
-    }, [state.password])
+    // useEffect(() => {
+       const disable = state.password !== state.confirm;
+    // }, [state.password])
 
 
     const handleChange = ( evt ) => {
