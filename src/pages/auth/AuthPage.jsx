@@ -1,8 +1,11 @@
+import SignUpForm from "../../components/SignUpForm/SignUpForm"
+
 const AuthPage = () => {
   return (
-    <div>
+    <main>
       <h1>Auth Page</h1>
-    </div>
+      <SignUpForm />
+    </main>
   )
 }
 

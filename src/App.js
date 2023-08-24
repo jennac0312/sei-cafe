@@ -12,7 +12,7 @@ import Nav from './components/Nav/Nav';
 
 function App() {
 
-  const [ user, setUser ] = useState( {} ) // array destructuring
+  const [ user, setUser ] = useState( null ) // array destructuring
 
   return (
     <main className="App">
