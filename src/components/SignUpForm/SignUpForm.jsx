@@ -26,12 +26,18 @@ export default class SignUpForm extends Component {
     handleChange = ( evt ) => {
         // setState funciton inheritied form component - sola flames thanks
         this.setState({
-            [evt.target.name] : evt.target.value
+            [evt.target.name] : evt.target.value,
             // dynamic way of updating our state depending on the event object that we're currently on
             // we are dynamically using name
             // array brackets bc cant have special symbols in keys of objects ( periods ) (3:00 ish)
             // name attribute : value attribute (which refrences the this.state.**attribute**)
+            error: ""
         })
+    }
+
+    handleSubmit = ( evt ) => {
+        evt.preventDefault()
+        alert( JSON.stringify(this.state) )
     }
 
     render(){
