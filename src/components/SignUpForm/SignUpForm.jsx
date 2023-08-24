@@ -11,6 +11,16 @@ export default class SignUpForm extends Component {
     // cant const/let here... variables here are global scoped..
         // if we dont let or const js auto assumes "var"
 
+    // handleChange(e){
+    //     // class component  bind
+    //     this.setState({}) // js will refer to the document. not this object.. grandfather DOM
+    //     // if we dont bind, this will refer to document object.
+    //     // have to bind to this parent component (  )
+    //     // thank you es6 for giving us let/const/arrowfunctions
+    // }
+
+    // in summary, in class components use arrow funcitons for automatic binding
+    
     render(){
         // need render method in class components
         const disable = this.state.password !== this.state.confirm;
@@ -25,6 +35,7 @@ export default class SignUpForm extends Component {
                 <form autoComplete="off" onSubmit={this.handleSubmit}>
                     <label>Name</label>
                     <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+                    {/* onChange is automatically passing the event to handleChange... */}
                     <label>Email</label>
                     <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
                     <label>Password</label>
