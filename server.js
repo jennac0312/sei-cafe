@@ -1,3 +1,5 @@
+require("dotenv").config()
+require('./config/database') // Connect to the database
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon'); // allows express to use icons when sending html... icon that goes into tabs on website. allows creativity.
