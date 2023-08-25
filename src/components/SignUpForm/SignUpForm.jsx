@@ -1,4 +1,6 @@
 import { Component } from "react";
+import { signUp } from '../../utilities/users-service'
+
 
 export default class SignUpForm extends Component {
     state = {
@@ -35,9 +37,25 @@ export default class SignUpForm extends Component {
         })
     }
 
-    handleSubmit = ( evt ) => {
+    handleSubmit = async ( evt ) => {
         evt.preventDefault()
-        alert( JSON.stringify(this.state) )
+        // alert( JSON.stringify(this.state) )
+
+        try {
+            // We don't want to send the 'error' or 'confirm' property,
+            // so let's make a copy of the state object, then delete them
+            // const newFormData = {...formData};
+            // delete newFormData.error;
+            // delete newFormData.confirm;
+            // or
+            // const {name, email, password} = formData
+        
+            const user = await signUp(this.state)
+            console.log(user)
+          } catch(err) {
+            // An error occurred
+            this.setState({error: 'Sign Up Failed - Try Again'})
+          }
     }
 
     render(){
