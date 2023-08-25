@@ -44,15 +44,15 @@ export default class SignUpForm extends Component {
         try {
             // We don't want to send the 'error' or 'confirm' property,
             // so let's make a copy of the state object, then delete them
-            // const newFormData = {...formData};
-            // delete newFormData.error;
-            // delete newFormData.confirm;
+            const newFormData = { ...this.state };
+            delete newFormData.error;
+            delete newFormData.confirm;
             // or
             // const {name, email, password} = formData
         
             const user = await signUp(this.state)
             console.log(user)
-          } catch(err) {
+          } catch(error) {
             // An error occurred
             this.setState({error: 'Sign Up Failed - Try Again'})
           }
