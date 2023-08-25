@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { signUp } from '../../utilities/users-service'
 
 const FunctionalSignUpForm = () => {
 
@@ -33,6 +34,8 @@ const FunctionalSignUpForm = () => {
                 delete newFormData.confirm;
                 
                 console.log( 'inside handlesubmit', newFormData )
+
+                const user = await signUp( newFormData )
 
             } catch (error) {
                 setFormData( {error: "Sign Up Failed. Try Again"} )
