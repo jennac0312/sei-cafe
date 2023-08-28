@@ -23,7 +23,7 @@ function App() {
       <h1>APP</h1>
       { user ?
       <>
-        <Nav />
+        <Nav user={user}/>
         <Routes>
           <Route path="/orders/new" element={ <NewOrderPage /> }/>
           <Route path="/orders" element={ <OrderHistoryPage /> }/>
