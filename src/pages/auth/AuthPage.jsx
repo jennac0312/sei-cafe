@@ -5,8 +5,8 @@ const AuthPage = () => {
   return (
     <main>
       <h1>Auth Page</h1>
-      <SignUpForm />
-      {/* <FunctionalSignUpForm /> */}
+      {/* <SignUpForm /> */}
+      <FunctionalSignUpForm />
     </main>
   )
 }

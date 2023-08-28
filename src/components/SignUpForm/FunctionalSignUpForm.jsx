@@ -38,7 +38,7 @@ const FunctionalSignUpForm = () => {
                 const user = await signUp( newFormData )
 
             } catch (error) {
-                setFormData( {error: "Sign Up Failed. Try Again"} )
+                setFormData({ ...formData, error: "Sign Up Failed. Try Again"})
             }
         
     }
