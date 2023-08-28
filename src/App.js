@@ -1,18 +1,22 @@
 // hooks
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
+import { getUser } from '../src/utilities/users-service';
 // pages
 import AuthPage from './pages/auth/AuthPage';
 import NewOrderPage from './pages/new-order/NewOrderPage';
+import OrderHistoryPage from './pages/order-history/OrderHistoryPage';
 // components
+import Nav from './components/Nav/Nav';
 // css
 import './App.css';
-import OrderHistoryPage from './pages/order-history/OrderHistoryPage';
-import Nav from './components/Nav/Nav';
+
+
 
 function App() {
 
-  const [ user, setUser ] = useState( null ) // array destructuring
+  const [ user, setUser ] = useState( getUser() ) // array destructuring
+  // returns either user from payload decoding or null
 
   return (
     <main className="App">
