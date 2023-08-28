@@ -9,6 +9,11 @@ export async function signUp( userData ) {
     const token = await usersAPI.signUp(userData )
     console.log('2')
 
+    //  save token to local storage with a key of token
+    localStorage.setItem( 'token', token ) // persist data and save to local storage
+    //  Local Storage only stores and retrieves strings
+    console.log( 'TOKEN', token )
+
     return token // to signUpForm where function is being called
 
     //  We have not used a try/catch block because any error will propagate up to the "consumer" of the service - in this case the consumer is the handleSubmitmethod in the <FunctionalSignUpForm> component

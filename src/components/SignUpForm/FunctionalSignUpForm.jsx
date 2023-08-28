@@ -36,6 +36,7 @@ const FunctionalSignUpForm = () => {
                 console.log( 'inside handlesubmit', newFormData )
 
                 const user = await signUp( newFormData )
+                console.log('USER',user)
 
             } catch (error) {
                 setFormData({ ...formData, error: "Sign Up Failed. Try Again"})

@@ -6,13 +6,13 @@ const BASE_URL = '/api/users';
 export async function signUp( userData ) {
   // Fetch uses an options object as a second arg to make requests
   // other than basic GET requests, include data, headers, etc.
-  const res = await fetch( BASE_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    // Fetch requires data payloads to be stringified
-    // and assigned to a body property on the options object
-    body: JSON.stringify( userData )
-  });
+  // const res = await fetch( BASE_URL, {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   // Fetch requires data payloads to be stringified
+  //   // and assigned to a body property on the options object
+  //   body: JSON.stringify( userData )
+  // });
 
 // REFACTORING TO AXIOS
     // const res = await axios( BASE_URL, {
@@ -28,13 +28,13 @@ export async function signUp( userData ) {
     // })
 
     // const res = await axios.post( BASE_URL, userData )
-    // const res = await axios.post( BASE_URL, userData, {
-    //     headers: {
-    //         'Content-Type' : 'application/json'
-    //     }
-    // })
+    const res = await axios.post( BASE_URL, userData, {
+        headers: {
+            'Content-Type' : 'application/json'
+        }
+    })
 
-    console.log(res)
+    console.log('FETCH RESPONSE FROM', BASE_URL ,res)
 
   // Check if request was successful
     if( res.status = 200 ) { // res.ok = status 200
@@ -42,6 +42,8 @@ export async function signUp( userData ) {
     console.log('success')
     // return res.json(); // trickles its way back to the signUpForm ( goes to users-service? )
     // return res.data; axios does this automatically.. its data not json
+
+    return (res.data) // sends token back
     } else {
         console.log('uh ohhh')
         throw new Error( 'Invalid Sign Up' );
