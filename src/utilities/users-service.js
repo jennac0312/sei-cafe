@@ -6,7 +6,7 @@ export async function signUp( userData ) {
      // Delegate the network request code to the users-api.js API module
     // which will ultimately return a JSON Web Token (JWT)
     console.log('1')
-    const token = await usersAPI.signUp(userData )
+    const token = await usersAPI.signUp( userData )
     console.log('2')
 
     //  save token to local storage with a key of token
@@ -44,3 +44,18 @@ export function getUser() {
     // If there's a token, return the user in the payload, otherwise return null
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
+
+
+export const logOut = () => {
+    localStorage.removeItem('token')
+}
+
+export const login = async ( credentials ) => {
+    const token = await usersAPI.login( credentials ) //credentials from form
+
+    // save token to local storage
+    localStorage.setItem( 'token', token )
+
+    return getUser()
+}
+// const token = await usersAPI.signUp(userData )

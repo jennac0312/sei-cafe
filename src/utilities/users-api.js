@@ -50,6 +50,28 @@ export async function signUp( userData ) {
     }
 }
 
+export const login = async ( credentials ) => {
+  const res = await axios.post( `${BASE_URL}/login`, credentials, {
+    headers: {
+        'Content-Type' : 'application/json'
+    }
+})
+
+console.log('FETCH RESPONSE FROM', BASE_URL ,res)
+
+// Check if request was successful
+if( res.status = 200 ) { // res.ok = status 200
+// res.json() will resolve to the JWT
+console.log('success')
+// return res.json(); // trickles its way back to the signUpForm ( goes to users-service? )
+// return res.data; axios does this automatically.. its data not json
+
+return (res.data) // sends token back
+} else {
+    console.log('uh ohhh')
+    throw new Error( 'Invalid Login' );
+}
+}
 // fetch and axios return differently
 // fetch has an ok property (and a status prop)
 // axios does not have fetch property but it does have a status property
